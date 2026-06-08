@@ -369,6 +369,5 @@ El proyecto está listo para producción con enfoque en seguridad, mantenibilida
 ---
 
 **Última actualización:** 8 de Junio, 2026  
-**Licencia:** MIT  
 **Autor(es):** Solin Rodriguez, Ana Cheung, Carlos Diaz  
 **Universidad:** Universidad Tecnológica de Panamá
