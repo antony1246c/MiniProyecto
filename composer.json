@@ -1,0 +1,11 @@
+{
+    "name": "samar/mini-proyecto",
+    "description": "Mini proyecto grupal",
+    "autoload": {
+        "psr-4": {
+            "Samar\\MiniProyecto\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
