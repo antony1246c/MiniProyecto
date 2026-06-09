@@ -10,10 +10,10 @@ $cantidad   = isset($_POST['cantidad']) ? (int) $_POST['cantidad'] : null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['numeros'])) {
     $raw     = $_POST['numeros'] ?? [];
-    $numeros = Utilidades::validarNumerosPositivos($raw);
+    $numeros = Utilidades::validarNotasPanama($raw);
 
     if ($numeros === null || count($numeros) !== $cantidad) {
-        $error = "Ingresa exactamente $cantidad notas válidas.";
+        $error = "Ingresa exactamente $cantidad notas válidas entre 1.0 y 5.0.";
     } else {
         $resultado = Estadisticos::calcular($numeros);
     }
@@ -39,17 +39,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['numeros'])) {
         <form method="POST" action="?p=7">
             <input type="hidden" name="cantidad" value="<?= $cantidad ?>">
             <div class="form-group">
-                <label>Ingresa <?= $cantidad ?> notas:</label>
+                <label>Ingresa <?= $cantidad ?> notas (1.0 a 5.0):</label>
                 <div class="inputs-col" style="grid-template-columns: repeat(<?= min($cantidad, 5) ?>, 1fr);">
                     <?php for ($i = 0; $i < $cantidad; $i++): ?>
                         <div class="form-group">
                             <label>Nota <?= $i + 1 ?></label>
                             <input type="number" name="numeros[]"
-                                   step="any" min="0" max="10"
+                                   step="0.1" min="1" max="5"
                                    value="<?= isset($_POST['numeros'][$i])
                                        ? Utilidades::sanitizar($_POST['numeros'][$i])
                                        : '' ?>"
-                                   placeholder="N<?= $i + 1 ?>" required>
+                                   placeholder="1.0 - 5.0" required>
                         </div>
                     <?php endfor; ?>
                 </div>

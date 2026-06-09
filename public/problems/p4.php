@@ -19,18 +19,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Clickea el botón para realizar el cálculo:</label>
         </div>
         <button type="submit" class="btn-calcular">Calcular</button>
-        <div>
-            <span>Fórmula utilizada:</span>
-            <img src="https://i.ibb.co/bgYtZL46/images.png" alt="Formula estadística">
-        </div>
     </form>
 
+    <div class="formula">
+        <span class="textoformula">Fórmula utilizada:</span>
+        <img src="https://i.ibb.co/bgYtZL46/images.png" alt="Fórmula estadística">
+    </div>
     <?php if (!empty($pares) && !empty($impares)): ?>
         <div class="result">
             <div class="stat-grid">
                 <div class="stat-box">
                     <div class="val"><?= $pares ?></div>
                     <div class="lbl">Total calculado de los pares</div>
+                </div>
+                <div class="stat-box">
                     <div class="val"><?= $impares ?></div>
                     <div class="lbl">Total calculado de los impares</div>
                 </div>
