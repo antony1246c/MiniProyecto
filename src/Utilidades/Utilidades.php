@@ -1,5 +1,5 @@
 <?php
-namespace Samar\MiniProyecto;
+namespace Samar\MiniProyecto\Utilidades;
 
 class Utilidades
 {
@@ -26,9 +26,28 @@ class Utilidades
         $numeros = [];
         foreach ($valores as $v) {
             $n = self::validarNumeroPositivo($v);
-            if ($n === null) return null;
+            if ($n === null)
+                return null;
             $numeros[] = $n;
         }
         return $numeros;
+    }
+
+    public static function validarFecha(string $fecha): bool
+    {
+        return preg_match(
+            '/^\d{4}-\d{2}-\d{2}$/',
+            $fecha
+        ) === 1;
+    }
+
+    public static function potencia(float $base, int $exponente): float
+    {
+        return pow($base, $exponente);
+    }
+
+    public static function raizCuadrada(float $numero): float
+    {
+        return sqrt($numero);
     }
 }

@@ -2,7 +2,7 @@
 require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use Samar\MiniProyecto\Procedimientos\Estadisticos;
-use Samar\MiniProyecto\Utilidades;
+use Samar\MiniProyecto\Utilidades\Utilidades;
 
 header('Content-Type: application/json');
 
