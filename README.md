@@ -1,79 +1,3 @@
-# MiniProyecto Grupal
-
-## 📌 Información del Proyecto
-
-**Universidad:** Universidad Tecnológica de Panamá  
-**Facultad:** Ingeniería de Sistemas Computacionales  
-**Curso:** Desarrollo de Software VII  
-**Salón:** 1GS131  
-**Fecha de Realización:** Junio 2026
-
-## 👥 Integrantes del Grupo
-
-| Nombre | Cédula |
-|--------|--------|
-| Solin Rodriguez | 8-1032-104 |
-| Ana Cheung | 8-1033-725 |
-| Carlos Diaz | 7-713-1842 |
-
----
-
-## 📖 Introducción
-
-MiniProyecto es una aplicación web desarrollada en PHP que implementa soluciones a 9 problemas matemáticos y algorítmicos. El proyecto sigue el patrón de diseño **Model-View-Controller (MVC)** y aplica principios de **Programación Orientada a Objetos (POO)** con énfasis en código limpio, reutilizable y seguro.
-
-### Objetivos
-- Demostrar el uso de estructuras de control: `if`, `switch`, `while`, `for`, `foreach`
-- Implementar métodos estáticos y POO
-- Aplicar validación y sanitización de datos (OWASP)
-- Mantener el código limpio siguiendo PSR-1
-- Aplicar el principio DRY (Don't Repeat Yourself)
-
----
-
-## 🛠️ Tecnologías Utilizadas
-
-| Tecnología | Versión | Descripción |
-|------------|---------|-------------|
-| **PHP** | 7.4+ | Lenguaje de programación backend |
-| **HTML5** | - | Estructura y semántica web |
-| **CSS3** | - | Estilos y diseño responsivo |
-| **JavaScript** | ES6+ | Interactividad del lado cliente |
-| **Chart.js** | 4.4.0 | Librerías para gráficas (pie, bar) |
-| **Composer** | - | Gestor de dependencias PHP |
-| **Font Awesome** | 6.5.0 | Iconos |
-| **Boxicons** | 2.1.4 | Iconos modernos |
-
----
-
-## 📁 Estructura del Proyecto
-
-```
-MiniProyecto/
-├── public/
-│   ├── index.php                 # Controlador principal
-│   ├── script.js                 # JavaScript global
-│   └── problems/
-│       ├── p1.php - p9.php      # Vistas de problemas
-├── src/
-│   ├── Utilidades.php            # Funciones de validación y sanitización
-│   ├── Components/
-│   │   ├── header.php            # Encabezado reutilizable
-│   │   └── footer.php            # Pie de página reutilizable
-│   ├── Problems/                 # Lógica de negocio (Model)
-│   │   ├── Edades.php
-│   │   ├── Multiplos.php
-│   │   ├── Presupuesto.php
-│   │   ├── Estadisticos.php
-│   │   ├── Potencias.php
-│   │   ├── EstacionAnio.php
-│   │   └── SumaNumeros.php
-│   └── estilos/                  # Hojas de estilo
-│       └── estiloP*.css
-├── vendor/                       # Autoload de Composer
-└── composer.json                 # Configuración de dependencias
-```
-
 ---
 
 ## 🎯 Problemas Implementados
@@ -81,45 +5,46 @@ MiniProyecto/
 ### Problema 1: Estadísticos (Media, Desviación Estándar, Mín, Máx)
 - Calcula estadísticas de 5 números
 - Clase: `Estadisticos`
-- Método: `calcularEstadisticas(array $numeros)`
+- Método: `calcular(array $numeros)`
 
 ### Problema 2: Suma del 1 al 1000
-- Suma de números consecutivos usando fórmula
+- Suma de números consecutivos usando fórmula de Gauss
 - Clase: `SumaNumeros`
 - Método: `calcular(int $primero, int $ultimo, int $n)`
 
 ### Problema 3: Múltiplos de 4
-- Calcula múltiplos de 4 hasta N
+- Calcula N primeros múltiplos de 4
 - Clase: `Multiplos`
 - Método: `calcular(int $cantidad)`
 
 ### Problema 4: Pares e Impares
-- Clasifica y suma números pares e impares
-- Lógica iterativa con `for` y `foreach`
+- Calcula independientemente la suma de pares e impares entre 1 y 200
+- Lógica iterativa con `for`
 
 ### Problema 5: Clasificación de Edades ⭐
-- Clasifica edades en categorías (Niños, Adolescentes, Adultos, Adulto Mayor)
-- **Usa `switch(true)` por rango de edad**
-- Gráfica de pastel (Pie chart con Chart.js)
-- Muestra edades repetidas
+- Clasifica 5 edades en categorías (Niño, Adolescente, Adulto, Adulto Mayor)
+- Clase: `Edades`
+- Gráfica de pastel interactiva con Chart.js
 
-### Problema 6: Presupuesto Hospitalario
-- Distribuye presupuesto entre departamentos (40%, 35%, 25%)
+### Problema 6: Presupuesto Hospitalario ⭐
+- Distribuye presupuesto entre departamentos (Ginecología 40%, Traumatología 35%, Pediatría 25%)
 - Clase: `Presupuesto`
-- Gráfica de barras
+- Gráfica de pastel interactiva con Chart.js
 
-### Problema 7: Estadísticos Avanzados
-- Calcula media, desviación estándar, mín, máx de N valores
+### Problema 7: Calculadora de Datos Estadísticos
+- El usuario define cuántas notas ingresar, luego calcula media, desviación estándar, mín y máx
+- Usa `foreach` para recorrer la colección de notas
 
 ### Problema 8: Estación del Año ⭐
-- Determina la estación según la fecha
-- **Usa `switch($mes)` con casos múltiples**
-- Operadores ternarios para transiciones de días
+- Determina la estación según la fecha ingresada
+- Clase: `EstacionAnio`
+- **Usa `switch($mes)` con casos múltiples y operadores ternarios para días de transición**
+- Muestra imagen representativa de la estación
 
 ### Problema 9: Potencias
-- Calcula potencias de un número hasta el límite
+- Solicita un número del 1 al 9 y genera sus 15 primeras potencias
 - Clase: `Potencias`
-- Método: `calcular(int $base, int $limite)`
+- Método: `calcular(int $base, int $limite = 15)`
 
 ---
 
@@ -136,10 +61,10 @@ public static function sanitizar(string $valor): string
 ```
 
 **Aplicación en el proyecto:**
-- Se usa en todos los formularios antes de reimprimir datos del usuario
+- Se usa en todos los scripts de `Procesos/` antes de procesar datos del usuario
 - `htmlspecialchars()` convierte caracteres especiales a entidades HTML
 - `strip_tags()` elimina etiquetas HTML/PHP maliciosas
-- Ejemplo en p5.php: `Utilidades::sanitizar($_POST['numeros'][$i])`
+- `trim()` elimina espacios innecesarios
 
 ### A03:2021 - Input Validation
 
@@ -159,37 +84,30 @@ public static function validarNumeroPositivo(string $valor): ?float
 **Aplicación en el proyecto:**
 - Valida que los valores sean números positivos antes de procesarlos
 - Usa `filter_var()` con `FILTER_VALIDATE_FLOAT` (OWASP recomendado)
-- Valida rango: números >= 0
-- Si la validación falla, retorna `null` y muestra error
+- Si la validación falla, retorna `null` y devuelve error JSON al frontend
 
-#### Ejemplo en p5.php:
+#### Ejemplo en `calcular_edades.php`:
 ```php
 $numeros = Utilidades::validarNumerosPositivos($raw);
 if ($numeros === null || count($numeros) !== 5) {
-    $error = 'Ingresa exactamente 5 edades válidas.';
+    echo json_encode(['success' => false, 'mensaje' => 'Ingresa exactamente 5 edades válidas.']);
+    exit;
 }
 ```
 
 ### Error Handling Seguro
 
-#### Implementación: Validación de parámetros
 ```php
 // En index.php
-switch ($problema) {
-    case 1:
-    case 2:
-    // ... casos 3-9
-        include __DIR__ . "/problems/p{$problema}.php";
-        break;
-    default:
-        echo '<div class="text">Problema no encontrado.</div>';
+elseif ($problema >= 1 && $problema <= 9) {
+    include __DIR__ . "/views/p{$problema}.php";
+} else {
+    echo '<div class="text">Problema no encontrado.</div>';
 }
 ```
 
-**Aplicación en el proyecto:**
-- Valida `?p` es integer entre 1-9
-- Si es inválido, muestra mensaje genérico sin exponer rutas
-- Evita acceso a archivos no autorizados
+- Valida que `?p` sea un entero entre 1 y 9
+- Si es inválido, muestra mensaje genérico sin exponer rutas internas ni errores de PHP
 
 ---
 
@@ -197,18 +115,19 @@ switch ($problema) {
 
 ### Estadísticos (Clase: `Estadisticos`)
 ```php
-public static function calcularEstadisticos(array $numeros): array
+public static function calcular(array $numeros): array
 {
-    $media = array_sum($numeros) / count($numeros);
+    $n = count($numeros);
+    $media = array_sum($numeros) / $n;
     $varianza = array_sum(
         array_map(fn($x) => pow($x - $media, 2), $numeros)
-    ) / count($numeros);
-    
+    ) / $n;
+
     return [
-        'media'     => number_format($media, 2),
-        'desv_std'  => number_format(sqrt($varianza), 2),
-        'min'       => min($numeros),
-        'max'       => max($numeros)
+        'media'    => round($media, 2),
+        'desv_std' => round(sqrt($varianza), 2),
+        'min'      => min($numeros),
+        'max'      => max($numeros)
     ];
 }
 ```
@@ -216,13 +135,13 @@ public static function calcularEstadisticos(array $numeros): array
 **Fórmulas aplicadas:**
 - Media: `Σx / n`
 - Varianza: `Σ(x - media)² / n`
-- Desviación estándar: `√varianza`
+- Desviación estándar: `√varianza` usando `sqrt()`
 
 ### Suma de Números Consecutivos (Clase: `SumaNumeros`)
 ```php
 public static function calcular(int $primero, int $ultimo, int $n): int
 {
-    // Fórmula: n(primero + último) / 2
+    // Fórmula de Gauss: n(primero + último) / 2
     return ($n * ($primero + $ultimo)) / 2;
 }
 ```
@@ -270,38 +189,28 @@ public static function calcularPresupuesto(int $cantidad): array
 
 ## ✅ Validación y Sanitización
 
-### Clase: `Utilidades`
+### Clase: `Utilidades` — Namespace: `Samar\MiniProyecto`
 
 #### Método 1: `sanitizar(string $valor): string`
 ```php
-// Aplica:
 // - trim(): Elimina espacios en blanco
-// - strip_tags(): Elimina etiquetas HTML
-// - htmlspecialchars(): Convierte caracteres especiales
+// - strip_tags(): Elimina etiquetas HTML/PHP
+// - htmlspecialchars(): Convierte caracteres especiales a entidades HTML seguras
 return htmlspecialchars(strip_tags(trim($valor)));
 ```
 
 #### Método 2: `validarNumeroPositivo(string $valor): ?float`
 ```php
-// Validaciones:
 // - Sanitiza primero
 // - Valida con filter_var(FILTER_VALIDATE_FLOAT)
 // - Verifica que sea >= 0
-// - Retorna null si falla
+// - Retorna null si falla la validación
 ```
 
 #### Método 3: `validarNumerosPositivos(array $valores): ?array`
 ```php
-// Valida un array de números
-// Retorna null si alguno falla
-```
-
-### Uso en Formularios
-```php
-// En los problemas:
-if ($numeros === null || count($numeros) !== 5) {
-    $error = 'Ingresa exactamente 5 edades válidas.';
-}
+// - Valida cada elemento del array individualmente
+// - Retorna null si cualquier elemento falla
 ```
 
 ---
@@ -310,31 +219,29 @@ if ($numeros === null || count($numeros) !== 5) {
 
 ### ✨ Principios Aplicados
 
-| Principio | Implementación |
-|-----------|-----------------|
-| **MVC** | Model (Problems/), View (problems/*.php), Controller (index.php) |
-| **POO** | Clases con métodos estáticos en `src/Problems/` |
-| **PSR-1** | Namespaces, camelCase, StudlyCaps para clases |
-| **DRY** | Componentes reutilizables (header, footer, Utilidades) |
-| **OWASP** | Sanitización, validación, error handling seguro |
+| Principio  | Implementación                                                              |
+|------------|-----------------------------------------------------------------------------|
+| **MVC**    | Model (`src/Procedimientos/`), View (`views/*.php`), Controller (`index.php`) |
+| **POO**    | Clases con métodos estáticos bajo namespace `Samar\MiniProyecto`            |
+| **PSR-1**  | StudlyCaps para clases, camelCase para métodos y variables                  |
+| **PSR-4**  | Autoloading con Composer, namespace `Samar\MiniProyecto\Procedimientos`     |
+| **DRY**    | Componentes reutilizables: `header.php`, `footer.php`, `Utilidades`         |
+| **OWASP**  | Sanitización, validación con `filter_var`, error handling seguro            |
 
 ### 🎨 Características Visuales
-
 - Diseño responsivo con CSS Grid
-- Modo Light/Dark automático con localStorage
-- Gráficas interactivas con Chart.js
-- Sidebar colapsable
-- Animaciones suaves
-- Footer dinámico con fecha actual
+- Modo Light/Dark con persistencia en `localStorage`
+- Gráficas de pastel interactivas con Chart.js
+- Sidebar colapsable con estado persistente
+- Navegación SPA con `fetch` y `history.pushState` sin recargar la página
+- Footer dinámico con fecha actual del día
 
 ### 🔄 Estructuras de Control
-
 - ✅ `if` / `elseif` / `else`
-- ✅ `switch` / `case` (EstacionAnio, Edades)
-- ✅ `for` (iteraciones)
-- ✅ `foreach` (arrays)
-- ✅ `while` (condicionales)
-- ✅ Operadores ternarios
+- ✅ `switch` / `case` (`EstacionAnio`, `Edades`)
+- ✅ `for` (Múltiplos, Potencias)
+- ✅ `foreach` (Estadísticos, validación de arrays)
+- ✅ Operadores ternarios (transiciones de estación por día)
 
 ---
 
@@ -342,11 +249,11 @@ if ($numeros === null || count($numeros) !== 5) {
 
 ### Requisitos
 - PHP 7.4+
-- Servidor web (Apache, Nginx)
+- Servidor web (Apache con WAMP/XAMPP o Nginx)
 - Composer
 
 ### Pasos
-1. Clonar/descargar el repositorio
+1. Clonar el repositorio: `git clone https://github.com/antony1246c/MiniProyecto`
 2. Navegar a la carpeta: `cd MiniProyecto`
 3. Instalar dependencias: `composer install`
 4. Acceder a: `http://localhost/MiniProyecto/public/index.php`
@@ -356,18 +263,17 @@ if ($numeros === null || count($numeros) !== 5) {
 ## 📝 Conclusiones
 
 Este proyecto demuestra:
-- Implementación correcta del patrón MVC
-- Programación orientada a objetos con métodos estáticos
-- Validación y sanitización de datos siguiendo OWASP
-- Código limpio y reutilizable (DRY)
-- Uso adecuado de estructuras de control
-- Diseño moderno y responsivo
-- Interactividad con JavaScript y Chart.js
-
-El proyecto está listo para producción con enfoque en seguridad, mantenibilidad y experiencia del usuario.
+- Implementación del patrón MVC con separación clara de responsabilidades
+- Programación orientada a objetos con métodos estáticos y namespaces PSR-4
+- Validación y sanitización de datos siguiendo las recomendaciones OWASP A03:2021
+- Código limpio y reutilizable aplicando el principio DRY
+- Uso adecuado de estructuras de control: `if`, `switch`, `for`, `foreach` y operadores ternarios
+- Navegación tipo SPA sin recarga de página usando `fetch` y `history.pushState`
+- Gráficas interactivas con Chart.js con manejo correcto de instancias
+- Diseño moderno con modo claro/oscuro persistente
 
 ---
 
-**Última actualización:** 8 de Junio, 2026  
-**Autor(es):** Solin Rodriguez, Ana Cheung, Carlos Diaz  
+**Última actualización:** Junio 2026  
+**Autores:** Solin Rodriguez, Ana Cheung, Carlos Diaz  
 **Universidad:** Universidad Tecnológica de Panamá
