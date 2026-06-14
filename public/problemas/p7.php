@@ -1,7 +1,7 @@
 <?php
 require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
-use Samar\MiniProyecto\Problems\Estadisticos;
+use Samar\MiniProyecto\Problemas\Estadisticos;
 use Samar\MiniProyecto\Utilidades;
 
 $resultado  = null;

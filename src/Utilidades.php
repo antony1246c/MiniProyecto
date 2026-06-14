@@ -31,22 +31,4 @@ class Utilidades
         }
         return $numeros;
     }
-
-    // Validar notas en escala panameña de 1.0 a 5.0
-    public static function validarNotasPanama(array $valores): ?array
-    {
-        $numeros = [];
-        foreach ($valores as $v) {
-            $limpio = self::sanitizar($v);
-            if (filter_var($limpio, FILTER_VALIDATE_FLOAT) === false) {
-                return null;
-            }
-            $num = (float) $limpio;
-            if ($num < 1.0 || $num > 5.0) {
-                return null;
-            }
-            $numeros[] = $num;
-        }
-        return $numeros;
-    }
 }
