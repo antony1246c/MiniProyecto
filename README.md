@@ -1,90 +1,155 @@
 # Mini Proyecto PHP - Programación Orientada a Objetos
 
-## Descripción
+## Introducción
 
-Aplicación web desarrollada en PHP siguiendo el patrón MVC, Programación Orientada a Objetos (POO) y estándares PSR-4. El proyecto implementa nueve problemas matemáticos y estadísticos utilizando clases reutilizables, validación de datos, sanitización de entradas y una interfaz moderna con navegación tipo SPA.
+El presente proyecto fue desarrollado como parte del curso de Programación Orientada a Objetos de la Universidad Tecnológica de Panamá. Su objetivo es aplicar conceptos fundamentales de programación orientada a objetos utilizando PHP, implementando estructuras de control condicionales y repetitivas, funciones matemáticas, validación de datos, sanitización de entradas, métodos estáticos y reutilización de código mediante el principio DRY.
+
+Además, el proyecto utiliza una arquitectura basada en MVC (Modelo - Vista - Controlador), permitiendo una mejor organización del código, mayor mantenibilidad y escalabilidad de la aplicación. Durante su desarrollo se aplicaron buenas prácticas recomendadas por los estándares PSR-1, PSR-4 y recomendaciones de seguridad basadas en OWASP.
 
 ---
 
-## Problemas Implementados
+# Información Académica
 
-### Problema 1: Estadísticos
+**Universidad:** Universidad Tecnológica de Panamá (UTP)
+
+**Facultad:** Facultad de Ingeniería de Sistemas Computacionales
+
+**Curso:** Programación Orientada a Objetos
+
+**Grupo:** 1GS131
+
+**Docente:** Ing. Irina Fong
+
+**Período Académico:** 2026
+
+### Integrantes
+
+- Solin Rodriguez
+- Ana Cheung
+- Carlos Diaz
+
+---
+
+# Descripción
+
+Aplicación web desarrollada en PHP siguiendo el patrón MVC, Programación Orientada a Objetos (POO) y los estándares PSR-1 y PSR-4. El proyecto implementa diversos problemas matemáticos y estadísticos utilizando clases reutilizables, validación de datos, sanitización de entradas y una interfaz moderna con navegación tipo SPA.
+
+---
+
+# Problemas Implementados
+
+## Problema 1: Estadísticos
 
 Calcula la media, desviación estándar, valor mínimo y valor máximo de cinco números.
 
-* Clase: `Estadisticos`
-* Método: `calcular(array $numeros)`
+- Clase: `Estadisticos`
+- Método: `calcular(array $numeros)`
 
-### Problema 2: Suma de Números Consecutivos
+## Problema 2: Suma de Números Consecutivos
 
 Calcula la suma de números consecutivos utilizando la fórmula de Gauss.
 
-* Clase: `SumaNumeros`
-* Método: `calcular(int $primero, int $ultimo, int $n)`
+- Clase: `SumaNumeros`
+- Método: `calcular(int $primero, int $ultimo, int $n)`
 
-### Problema 3: Múltiplos de 4
+## Problema 3: Múltiplos de 4
 
 Genera los primeros N múltiplos de 4.
 
-* Clase: `Multiplos`
-* Método: `calcular(int $cantidad)`
+- Clase: `Multiplos`
+- Método: `calcular(int $cantidad)`
 
-### Problema 4: Pares e Impares
+## Problema 4: Pares e Impares
 
 Calcula por separado la suma de los números pares e impares entre 1 y 200 utilizando estructuras iterativas.
 
-### Problema 5: Clasificación de Edades
+## Problema 5: Clasificación de Edades
 
 Clasifica cinco edades en las categorías:
 
-* Niño
-* Adolescente
-* Adulto
-* Adulto Mayor
+- Niño
+- Adolescente
+- Adulto
+- Adulto Mayor
 
 Incluye gráfica de pastel interactiva con Chart.js.
 
-### Problema 6: Presupuesto Hospitalario
+## Problema 6: Presupuesto Hospitalario
 
 Distribuye un presupuesto entre los departamentos:
 
-* Ginecología: 40%
-* Traumatología: 35%
-* Pediatría: 25%
+- Ginecología: 40%
+- Traumatología: 35%
+- Pediatría: 25%
 
 Incluye gráfica de pastel interactiva con Chart.js.
 
-### Problema 7: Calculadora de Datos Estadísticos
+## Problema 7: Calculadora de Datos Estadísticos
 
 Permite al usuario indicar cuántas notas desea ingresar y calcula:
 
-* Media
-* Desviación estándar
-* Valor mínimo
-* Valor máximo
+- Media
+- Desviación estándar
+- Valor mínimo
+- Valor máximo
 
 Utiliza `foreach` para recorrer la colección de datos.
 
-### Problema 8: Estación del Año
+## Problema 8: Estación del Año
 
 Determina la estación del año según la fecha ingresada.
 
-* Clase: `EstacionAnio`
-* Utiliza `switch` y operadores ternarios
-* Muestra una imagen representativa de la estación
+- Clase: `EstacionAnio`
+- Método: `calcular(string $fecha)`
+- Utiliza `switch`
+- Utiliza operadores ternarios
+- Muestra una imagen representativa de la estación
 
-### Problema 9: Potencias
+## Problema 9: Potencias
 
 Solicita un número del 1 al 9 y genera sus primeras 15 potencias.
 
-* Clase: `Potencias`
-* Método: `calcular(int $base, int $limite = 15)`
+- Clase: `Potencias`
+- Método: `calcular(int $base, int $limite = 15)`
 
 ---
 
-## Seguridad y OWASP
+# Arquitectura del Proyecto
 
-### Prevención de XSS (OWASP A03:2021)
+El proyecto fue desarrollado siguiendo el patrón MVC (Modelo - Vista - Controlador).
+
+```text
+MiniProyecto/
+│
+├── public/
+│   ├── index.php
+│   ├── assets/
+│   └── Procesos/
+│
+├── src/
+│   ├── Components/
+│   ├── Procedimientos/
+│   └── Utilidades/
+│
+├── views/
+│
+├── vendor/
+│
+└── composer.json
+```
+
+### Componentes Principales
+
+- **Views:** Interfaces mostradas al usuario.
+- **Procesos:** Recepción y validación de datos.
+- **Procedimientos:** Lógica de negocio y resolución de problemas.
+- **Utilidades:** Validaciones, sanitización y funciones reutilizables.
+
+---
+
+# Seguridad y OWASP
+
+## Prevención de XSS (OWASP A03:2021 - Injection)
 
 ```php
 public static function sanitizar(string $valor): string
@@ -95,11 +160,14 @@ public static function sanitizar(string $valor): string
 
 Características:
 
-* Eliminación de espacios innecesarios mediante `trim()`
-* Eliminación de etiquetas HTML/PHP con `strip_tags()`
-* Conversión de caracteres especiales usando `htmlspecialchars()`
+- Eliminación de espacios mediante `trim()`.
+- Eliminación de etiquetas HTML y PHP mediante `strip_tags()`.
+- Conversión de caracteres especiales mediante `htmlspecialchars()`.
+- Prevención de ataques XSS (Cross-Site Scripting).
 
-### Validación de Entradas
+---
+
+## Validación de Entradas
 
 ```php
 public static function validarNumeroPositivo(string $valor): ?float
@@ -118,39 +186,144 @@ public static function validarNumeroPositivo(string $valor): ?float
 
 Características:
 
-* Validación mediante `filter_var()`
-* Restricción de valores negativos
-* Manejo seguro de errores
-
-### Manejo Seguro de Errores
-
-```php
-elseif ($problema >= 1 && $problema <= 9) {
-    include __DIR__ . "/views/p{$problema}.php";
-} else {
-    echo '<div class="text">Problema no encontrado.</div>';
-}
-```
-
-Se evita exponer rutas internas o información sensible del servidor.
+- Validación utilizando `filter_var()`.
+- Restricción de números negativos.
+- Sanitización automática de datos.
+- Manejo seguro de errores.
 
 ---
 
-## Funciones Matemáticas Implementadas
+## Validación de Fechas
 
-### Estadísticos
+```php
+public static function validarFecha(string $fecha): bool
+{
+    return preg_match(
+        '/^\d{4}-\d{2}-\d{2}$/',
+        $fecha
+    ) === 1;
+}
+```
 
-* Media: Σx / n
-* Varianza: Σ(x − media)² / n
-* Desviación estándar: √varianza
+Características:
 
-### Suma de Números Consecutivos
+- Uso de expresiones regulares mediante `preg_match()`.
+- Verificación del formato AAAA-MM-DD.
+- Prevención de entradas inválidas.
+
+---
+
+## Gestión Segura de Errores
+
+```php
+if ($cantidad === null || $cantidad < 1) {
+    echo json_encode([
+        'success' => false,
+        'mensaje' => 'Ingresa un número entero positivo válido.'
+    ]);
+    exit;
+}
+```
+
+También se implementan casos por defecto para evitar errores inesperados:
+
+```php
+default:
+    $estacion = 'Desconocida';
+```
+
+Esto evita exponer rutas internas, errores de PHP o información sensible al usuario final.
+
+---
+
+# Clase Utilidades
+
+Namespace:
+
+```php
+namespace Samar\MiniProyecto\Utilidades;
+```
+
+La clase Utilidades centraliza la lógica de validación, sanitización y operaciones matemáticas reutilizables, aplicando el principio DRY.
+
+## Métodos Disponibles
+
+### sanitizar()
+
+- Elimina espacios en blanco con `trim()`.
+- Elimina etiquetas HTML/PHP con `strip_tags()`.
+- Convierte caracteres especiales mediante `htmlspecialchars()`.
+
+### validarNumeroPositivo()
+
+- Valida números mediante `filter_var()`.
+- Rechaza valores negativos.
+- Sanitiza automáticamente la entrada.
+
+### validarNumerosPositivos()
+
+- Valida arreglos completos.
+- Reutiliza internamente `validarNumeroPositivo()`.
+- Retorna `null` si algún dato es inválido.
+
+### validarFecha()
+
+- Valida fechas utilizando `preg_match()`.
+- Verifica el formato AAAA-MM-DD.
+
+### potencia()
+
+```php
+public static function potencia(
+    float $base,
+    int $exponente
+): float
+{
+    return pow($base, $exponente);
+}
+```
+
+- Encapsula la función matemática `pow()`.
+- Reutilizada por las clases `Potencias` y `Estadisticos`.
+
+### raizCuadrada()
+
+```php
+public static function raizCuadrada(float $numero): float
+{
+    return sqrt($numero);
+}
+```
+
+- Encapsula la función matemática `sqrt()`.
+- Utilizada para calcular la desviación estándar.
+
+---
+
+# Funciones Matemáticas Implementadas
+
+## Estadísticos
+
+- Media = Σx / n
+- Varianza = Σ(x − media)² / n
+- Desviación estándar = √varianza
+
+La clase utiliza:
+
+```php
+Utilidades::potencia()
+Utilidades::raizCuadrada()
+```
+
+## Suma de Números Consecutivos
+
+Fórmula de Gauss:
 
 ```php
 return ($n * ($primero + $ultimo)) / 2;
 ```
 
-### Múltiplos de 4
+## Múltiplos de 4
 
 ```php
 for ($i = 1; $i <= $cantidad; $i++) {
@@ -158,18 +331,18 @@ for ($i = 1; $i <= $cantidad; $i++) {
 }
 ```
 
-### Potencias
+## Potencias
 
 ```php
 for ($i = 1; $i <= $limite; $i++) {
     $resultado[] = [
         'exponente' => $i,
-        'valor' => pow($base, $i)
+        'valor' => Utilidades::potencia($base, $i)
     ];
 }
 ```
 
-### Presupuesto Hospitalario
+## Presupuesto Hospitalario
 
 ```php
 return [
@@ -181,79 +354,143 @@ return [
 
 ---
 
-## Clase Utilidades
+# Aplicación del Principio DRY
 
-Namespace:
+Se aplicó el principio DRY (Don't Repeat Yourself) evitando la duplicación de código mediante componentes y funciones reutilizables.
+
+## Reutilización de Validaciones
 
 ```php
-Samar\MiniProyecto
+Utilidades::sanitizar()
+Utilidades::validarNumeroPositivo()
+Utilidades::validarNumerosPositivos()
+Utilidades::validarFecha()
 ```
 
-### Métodos Disponibles
+## Reutilización de Funciones Matemáticas
 
-#### sanitizar()
+```php
+Utilidades::potencia()
+Utilidades::raizCuadrada()
+```
 
-* Elimina espacios en blanco
-* Elimina etiquetas HTML/PHP
-* Convierte caracteres especiales
+## Reutilización de Componentes
 
-#### validarNumeroPositivo()
+- header.php
+- footer.php
 
-* Valida números flotantes
-* Rechaza valores negativos
+Beneficios obtenidos:
 
-#### validarNumerosPositivos()
-
-* Valida arreglos completos
-* Retorna `null` si algún dato es inválido
-
----
-
-## Principios Aplicados
-
-| Principio | Implementación                            |
-| --------- | ----------------------------------------- |
-| MVC       | Separación entre Model, View y Controller |
-| POO       | Clases y métodos estáticos                |
-| PSR-1     | Convenciones de nomenclatura              |
-| PSR-4     | Autoloading con Composer                  |
-| DRY       | Reutilización de componentes              |
-| OWASP     | Sanitización y validación de datos        |
+- Menor duplicación de código.
+- Mayor mantenibilidad.
+- Código más limpio y escalable.
 
 ---
 
-## Características de la Aplicación
+# Estándares PSR Aplicados
 
-* Diseño responsivo con CSS Grid
-* Modo Claro/Oscuro
-* Persistencia de preferencias con LocalStorage
-* Gráficas interactivas con Chart.js
-* Sidebar colapsable
-* Navegación SPA mediante Fetch API
-* Uso de History API (`pushState`)
-* Footer dinámico con fecha actual
+## PSR-1
+
+### Clases (StudlyCaps)
+
+```php
+Estadisticos
+Potencias
+Presupuesto
+EstacionAnio
+Multiplos
+Utilidades
+```
+
+### Métodos (camelCase)
+
+```php
+calcular()
+calcularPresupuesto()
+validarNumeroPositivo()
+validarNumerosPositivos()
+validarFecha()
+raizCuadrada()
+```
+
+## PSR-4
+
+Implementado mediante Composer:
+
+```json
+{
+    "autoload": {
+        "psr-4": {
+            "Samar\\MiniProyecto\\": "src/"
+        }
+    }
+}
+```
+
+Beneficios:
+
+- Carga automática de clases.
+- Organización modular.
+- Uso de namespaces.
+- Mayor mantenibilidad.
 
 ---
 
-## Estructuras de Control Utilizadas
+# Estructuras de Control Utilizadas
 
-* `if / elseif / else`
-* `switch / case`
-* `for`
-* `foreach`
-* Operadores ternarios
+- if
+- elseif
+- else
+- switch
+- case
+- for
+- foreach
+- Operadores ternarios
+
+Ejemplos:
+
+- `switch` en EstacionAnio.
+- `foreach` en Estadisticos y Utilidades.
+- `for` en Multiplos y Potencias.
+- Operadores ternarios en EstacionAnio.
 
 ---
 
-## Instalación
+# Tecnologías Utilizadas
 
-### Requisitos
+- PHP 8
+- Composer
+- HTML5
+- CSS3
+- JavaScript
+- Fetch API
+- History API
+- Chart.js
 
-* PHP 7.4 o superior
-* Composer
-* Apache (WAMP/XAMPP) o Nginx
+---
 
-### Pasos
+# Características de la Aplicación
+
+- Diseño responsivo.
+- Modo Claro/Oscuro.
+- Persistencia mediante LocalStorage.
+- Gráficas interactivas con Chart.js.
+- Sidebar colapsable.
+- Navegación SPA mediante Fetch API.
+- Uso de History API (`pushState`).
+- Footer dinámico con fecha actual.
+
+---
+
+# Instalación
+
+## Requisitos
+
+- PHP 7.4 o superior.
+- Composer.
+- Apache (XAMPP/WAMP) o Nginx.
+
+## Pasos
 
 ```bash
 git clone https://github.com/antony1246c/MiniProyecto
@@ -269,29 +506,31 @@ http://localhost/MiniProyecto/public/index.php
 
 ---
 
-## Conclusiones
+# Conclusiones
 
-* Implementación correcta del patrón MVC.
-* Aplicación de Programación Orientada a Objetos mediante clases reutilizables.
-* Uso de namespaces y autoloading PSR-4 con Composer.
-* Validación y sanitización de entradas siguiendo recomendaciones OWASP.
-* Código modular y mantenible aplicando el principio DRY.
-* Implementación de navegación SPA utilizando Fetch API e History API.
-* Visualización de datos mediante gráficas interactivas con Chart.js.
-* Interfaz moderna con soporte para modo claro y oscuro.
+- Implementación correcta del patrón MVC.
+- Aplicación de Programación Orientada a Objetos mediante clases reutilizables.
+- Uso de namespaces y autoloading PSR-4 con Composer.
+- Aplicación de recomendaciones OWASP mediante `htmlspecialchars()`, `filter_var()` y `preg_match()`.
+- Centralización de validaciones y funciones matemáticas en la clase Utilidades.
+- Aplicación del principio DRY mediante reutilización de componentes y métodos estáticos.
+- Uso de estructuras de control condicionales y repetitivas para resolver problemas algorítmicos.
+- Implementación de navegación SPA utilizando Fetch API e History API.
+- Visualización de datos mediante gráficas interactivas con Chart.js.
+- Interfaz moderna con soporte para modo claro y oscuro.
 
 ---
 
-## Autores
+# Autores
 
-* Solin Rodriguez
-* Ana Cheung
-* Carlos Diaz
+- Solin Rodriguez
+- Ana Cheung
+- Carlos Diaz
 
 ## Universidad
 
 Universidad Tecnológica de Panamá (UTP)
 
----
+**Grupo:** 1GS131
 
 **Última actualización:** Junio 2026
